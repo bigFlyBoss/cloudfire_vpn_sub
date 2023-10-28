@@ -1,0 +1,18 @@
+name: Execute Script
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+
+jobs:
+  execute-script:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Run script
+        run: |
+          # 在这里运行你的脚本命令
+          ./generate_link.sh
